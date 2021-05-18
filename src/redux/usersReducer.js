@@ -1,7 +1,7 @@
 import { USERS } from '../shared/users';
 import * as ActionTypes from './ActionTypes';
 
-export const UsersReducer = (state = USERS, action) => {
+export const usersReducer = (state = USERS, action) => {
     console.log("old state: ", state)
     switch (action.type) {
         case ActionTypes.ADD_USER:   // addUser(email, password)

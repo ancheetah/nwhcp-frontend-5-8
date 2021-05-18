@@ -2,7 +2,7 @@
 import { ORGANIZATIONS } from '../shared/organizations';
 import * as ActionTypes from './ActionTypes';
 
-export const OrganizationsReducer = (state = ORGANIZATIONS, action) => {
+export const organizationsReducer = (state = ORGANIZATIONS, action) => {
     switch (action.type) {
         case ActionTypes.ADD_ORGANIZATION:   // addOrganization(orgId, orgTitle, city)
             const organization = action.payload; 
