@@ -1,14 +1,19 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-import { OrganizationsReducer } from './organizationsReducer';
-import { UsersReducer } from './usersReducer';
+import { organizationsReducer } from './organizationsReducer';
+import { usersReducer } from './usersReducer';
+import { mapReducer } from './mapReducer';
 
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
-            OrganizationsReducer,
-            UsersReducer
-        })
+            organizationsReducer,
+            usersReducer,
+            mapReducer
+        }),
+        applyMiddleware(thunk, logger)
     );
     return store;
 }

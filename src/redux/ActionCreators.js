@@ -22,3 +22,17 @@ export const addUser = (email, password) => ({
         password: password
     }
 });
+
+export const fetchMapLoading = () => ({
+    type: ActionTypes.MAP_LOADING
+})
+
+export const fetchMapSuccess = map => ({
+    type: ActionTypes.MAP_SUCCESS,
+    payload: { map }
+})
+
+export const fetchMapFailure = errorMess => ({
+    type: ActionTypes.MAP_FAILED,
+    payload: { errorMess }
+})
